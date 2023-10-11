@@ -1,8 +1,8 @@
-# def solution(numbers):
-#     num_list = sorted(numbers)
-#     answer = num_list[-1] * num_list[-2]
+def solution(numbers):
+    num_list = sorted(numbers)
+    answer = num_list[-1] * num_list[-2]
 
-#     return answer
+    return answer
 
 def solution(numbers):
     answer = 0
