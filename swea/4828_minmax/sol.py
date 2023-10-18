@@ -7,7 +7,7 @@ for tc in range(1, T+1):
     N = int(input())
     
     numbers = list(map(int, input().split()))
-
+  
     max_num = 0
     min_num = 100000000
     idx = 0
