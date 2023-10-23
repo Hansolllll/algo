@@ -11,7 +11,6 @@ def solution(n, numlist):
 # def solution(n, numlist):
 #     for i in range(len(numlist)):
 #         if numlist[i] % n != 0:
-
 #             numlist.pop(i)
 #         else: 
 #             continue

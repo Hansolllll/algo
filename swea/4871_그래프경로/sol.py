@@ -52,4 +52,6 @@ for tc in range(1, 1+T):
         # => 과거의 위치로 돌아가기
         else:
             V = stack.pop()
+
+    print(result)
                     

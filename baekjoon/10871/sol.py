@@ -10,12 +10,12 @@ for num in numbers:
         print(num, end = " ")
 
 # 런타임에러
-# N, X = map(int, input().split())
-# numbers = list(map(int, input().split()))
+N, X = map(int, input().split())
+numbers = list(map(int, input().split()))
 
-# numbers2 = ''
-# for num in numbers:
-#     if num < X:
-#         numbers2.append(num)
-# result = ' '.join(map(str, numbers2))
+numbers2 = []
+for num in numbers:
+    if num < X:
+        numbers2.append(num)
+result = ' '.join(map(str, numbers2))
 
