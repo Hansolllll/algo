@@ -1,14 +1,9 @@
 def solution(num_list, n):
     groups = len(num_list) // n
 
-
-    # answer = [[] for _ in range(groups)]
-    # for num in num_list:
-    #     for i in range(len(answer)):
-    #         if len(answer[i]) <= n-1:
-    #             answer[i].append(num)
-    #         else:
-                
+    answer = []
+    for i in range(groups):
+        answer.append(num_list[n*i:n*(i+1)])              
 
     return answer
 
