@@ -1,9 +1,8 @@
 def solution(citations):
-    #?
-    # citations.sort(reverse=True)
-    # for i in range(len(citations)):
-    #     if i + 1 >= citations[i]:
-    #         return citations[i] 
+    citations.sort(reverse=True)
+    for i in range(len(citations)):
+        if i + 1 <= citations[i]:
+            return citations[i] 
 
 
     # 이중반복문으로 i인덱스 이상인 수를 카운트 해서 count_list에 넣기(H-index에 대한 이해부족)
