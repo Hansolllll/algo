@@ -1,7 +1,10 @@
 def solution(n):
-    answer = 0
-    
-    return answer
+    i = 1
+    total = 1 
+    while total <= n:
+        i += 1
+        total = i * total
+    return i - 1
 
 
 print(solution(3628800))
