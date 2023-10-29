@@ -4,7 +4,7 @@ def solution(array, n):
         if abs(num - n) < abs(answer - n):
             answer = num
         elif abs(num - n) == abs(answer - n):
-            answer == min(num, answer)
+            answer = min(num, answer)
     return answer
 
 print(solution([3, 10, 28], 20))
