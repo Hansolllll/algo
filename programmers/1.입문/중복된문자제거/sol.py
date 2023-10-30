@@ -13,6 +13,9 @@ def solution(my_string):
     # 문자열로 변환해서 리턴
     return ''.join(stack)
 
+# 내장함수 사용
+def solution(my_string):
+    return ''.join(dict.fromkeys(my_string))
 
 print(solution('people'))
 print(solution('We are the world'))

@@ -23,5 +23,16 @@ def solution(n):
 
     return total
 
+
+# 너무 깔끔한 답변, 컴파일 시간까지 고려한 답변
+def solution(n):
+    output = 0
+    for i in range(4, n + 1):
+        for j in range(2, int(i ** 0.5) + 1):
+            if i % j == 0:
+                output += 1
+                break
+    return output
+
 print(solution(10))
 print(solution(15))

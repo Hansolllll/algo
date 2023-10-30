@@ -12,8 +12,6 @@ def solution(letter):
     for sign in signal:
         answer += morse[sign]
 
-
-
     return answer
 
 print(solution('.... . .-.. .-.. ---'))
