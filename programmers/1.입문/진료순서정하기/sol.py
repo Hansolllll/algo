@@ -9,6 +9,14 @@ def solution(emergency):
 
     return answer
 
+# dictionary 이용한 문제 풀이 
+def solution(emergency):
+    dict1={}
+    list1=sorted(emergency,reverse=True)
+    for i,x in enumerate(list1,start=1):
+        dict1[x]=i
+    answer=[dict1[x] for x in emergency]
+    return answer
 
 print(solution([3, 76, 24]))
 print(solution([1, 2, 3, 4, 5, 6, 7]))

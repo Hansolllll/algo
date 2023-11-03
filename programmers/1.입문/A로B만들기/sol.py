@@ -12,5 +12,15 @@ def solution(before, after):
     else:
         return 0
 
+# 정렬 이용해서 풀이
+def solution(before, after):
+    sort_bef = sorted(before)
+    sort_aft = sorted(after)
+    if sort_bef == sort_aft:
+        return 1
+    else:
+        return 0
+print(solution("olleh","hello"))
+
 print(solution('olleh', 'hello'))
 print(solution('allpe', 'apple'))
