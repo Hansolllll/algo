@@ -1,5 +1,4 @@
 def solution(s):
-    answer = 0
     num_list = list(s.split())
     
     stack = []
