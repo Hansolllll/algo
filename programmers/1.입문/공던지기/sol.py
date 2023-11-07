@@ -6,10 +6,6 @@ def solution(numbers, k):
         if count == k:
             return num_list[i]
  
-
-
-
-
     # if 2 * (k-1) >= len(numbers):
     #     idx = 2 * (k-1) - len(numbers)
     #     answer = numbers[idx]
