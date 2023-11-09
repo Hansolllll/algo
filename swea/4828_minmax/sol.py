@@ -1,6 +1,17 @@
 import sys
 sys.stdin = open('input.txt')
 
+# max함수와 min함수 사용
+T = int(input())
+for tc in range(1, T+1):
+    N = int(input())
+
+    numbers = list(map(int, input().split()))
+    answer = max(numbers) - min(numbers)
+    print(f'#{tc} {answer}')
+
+
+# 직접비교하는 방법
 T = int(input())
 
 for tc in range(1, T+1):
@@ -24,22 +35,22 @@ for tc in range(1, T+1):
 
     print(f'#{tc} {result}')
 
-# T = int(input())
+T = int(input())
 
-# for tc in range(1, T+1):
-#     N = int(input())
+for tc in range(1, T+1):
+    N = int(input())
     
-#     numbers = list(map(int, input().split()))
+    numbers = list(map(int, input().split()))
 
-#     min_num = 1000000
-#     max_num = 0
+    min_num = 1000000
+    max_num = 0
 
-#     for num in numbers:
-#         if min_num > num:
-#             min_num = num
+    for num in numbers:
+        if min_num > num:
+            min_num = num
         
-#         if max_num < num:
-#             max_num = num
+        if max_num < num:
+            max_num = num
     
-#     result = max_num - min_num
-#     print(f'#{tc} {result}')
+    result = max_num - min_num
+    print(f'#{tc} {result}')

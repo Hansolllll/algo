@@ -5,48 +5,6 @@ T = int(input())
 
 for tc in range(1, T+1):
     N = int(input())
-    # 칠할영역의 개수
-
-    block_list = [] # input 데이터 붙여서 긴 데이터 만들기
-    red = [] # 빨간색으로 칠할 구간 
-    blue = [] # 파란색으로 칠할 구간
-
-    # blocklist에 input데이터 다 넣기
-    for i in range(N):
-        numbers = list(map(int, input().split()))
-        block_list.append(numbers)
-    
-    # 빨갛게 칠할 구간과 파랗게 칠할 구간 나누기
-    for j in range(len(block_list)):
-        if block_list[j][4] == 1:
-            red.append(block_list[j])
-        elif block_list[j][4] == 2:
-            blue.append(block_list[j])
-
-    # red, blue 구간 튜플로 표시해서 겹치는 구간 찾기
-    # red 구간의 x축범위와 y축범위 튜플로 묶어 redpoint에 넣기
-    redpoint = []
-    for k in range(len(red)):
-        for rx in range(red[k][0], red[k][2]+1):
-            for ry in range(red[k][1], red[k][3]+1):
-                redpoint.append((rx, ry))
-
-    # blue구간의 x축범위와 y축범위를 튜플로 묶은 것이 
-    # redpoint내에 존재하는지 확인한 후 카운트 
-    count = 0
-    for k in range(len(blue)):
-        for bx in range(blue[k][0], blue[k][2]+1):
-            for by in range(blue[k][1], blue[k][3]+1):
-                if (bx, by) in redpoint:
-                    count += 1
-
-    print(f'#{tc} {count}')
-
-
-T = int(input())
-
-for tc in range(1, T+1):
-    N = int(input())
     # N :칠할 영역
 
     #칠할공간 만들기 (board)

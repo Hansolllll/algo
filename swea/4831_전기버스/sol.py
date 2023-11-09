@@ -13,6 +13,7 @@ for tc in range(1, T+1):
     charging = 0
     now = 0
 
+
     if K < N: # 바로 도착 못할 경우
         while now < N:
             for i in range(now+K, now, -1): #이동가능한 범위 내 충전소 찾기
