@@ -15,6 +15,9 @@ def solution(my_string):
     
     return total
 
+# -를 + -로 변환
+def solution(my_string):
+    return sum(int(i) for i in my_string.replace(' - ', ' + -').split(' + '))
 
 # # 하나의 기호만 계속 사용된다고 착각
 #     # my_string에서 공백 제거

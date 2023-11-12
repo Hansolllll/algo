@@ -9,9 +9,41 @@ def solution(numbers):
         
     return int(''.join(numbers))
 
-    # for i in range(len(eng)):
-    #     if eng[i] in numbers:
-    #         numbers = numbers.replace(eng[i], str(i))
+# 딕셔너리 이용
+def solution(numbers):
+    num = {
+        'one' : 1 , 'two' : 2, 'three' : 3,
+        'four' : 4, 'five' : 5, 'six' : 6,
+        'seven' : 7, 'eight' : 8, 'nine': 9 
+        'zero' : 0
+    }
 
+    answer = numbers  
+
+#원소(키/값 쌍)들을 얻으려면 이름 뒤에 .items()를 쓰면 됩니다.
+# dict_items([('one', '1'), ('two', '2') ... 튜플로 반환
+# k에는 key 값, v에는 value값 할당
+
+    for k, v in num.items():
+        answer = answer.replace(k, str(v))
+        # replace는 문자열을 변경하는 함수
+    return int(answer)
+
+# 딕셔너리 이용 2
+def solution(numbers):
+    r = {'zero': '0', 'one': '1', 'two': '2', 'three': '3', 'four': '4',\
+         'five': '5', 'six': '6', 'seven': '7', 'eight': '8', 'nine': '9'}
+    for k in r.keys():
+        numbers = numbers.replace(k, r[k])
+    return int(numbers)
+
+# enumerate 이용
+def solution(numbers):
+    for num, eng in enumerate(["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]):
+        numbers = numbers.replace(eng, str(num))
+    return int(numbers)
+
+
+print(solution("onefourzerosixseven"))    
 print(solution('onetwothreefourfivesixseveneightnine'))
 print(solution('onefourzerosixseven'))
