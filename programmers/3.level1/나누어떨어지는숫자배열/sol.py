@@ -1,7 +1,7 @@
 def solution(arr, divisor):
     answer = []
     for num in arr:
-        # 나눠떨어지지 않는다면
+        # 나눠떨어진다면
         if num % divisor == 0:
             answer.append(num)
     if len(answer) == 0:
