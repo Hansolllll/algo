@@ -20,5 +20,28 @@ def solution(n):
         count += 1
     return answer
 
+# set이용
+def solution(n):
+    a = []
+    for i in range(1, 250):
+        if i % 3 != 0 and '3' not in str(i):
+            a.append(i)
+
+    answer = {}
+    # answer = {key+1: value for key, value in enumerate(a)}
+
+    for key, value in enumerate(a):
+        answer[key+1] = value 
+
+    return answer[n]
+# set이용 2
+def solution(n):
+    x = [i for i in range(1, 200) if i % 3 != 0]
+    y = [i for i in range(1, 200) if '3' not in str(i)]
+
+    answer = list(set(x) & set(y))
+    return answer[n-1]
+    
+print(solution(15))
 print(solution(15))
 print(solution(40))

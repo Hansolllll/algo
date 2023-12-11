@@ -25,6 +25,21 @@ def solution(a, b):
     else:
         return 2
 
+# 방법 2(분모만 고려)
+from math import gcd
+def solution(a, b):
+    answer = 0
+    b //= gcd(a, b)
+    while b != 1:
+        if b % 2 == 0:
+            b //= 2
+        elif b % 5 == 0:
+            b //= 5
+        else:
+            break
+    if not b == 1:
+        b = 2
+    return b
 
 print(solution(7, 20))
 print(solution(11, 22))
