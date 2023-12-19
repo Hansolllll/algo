@@ -11,7 +11,7 @@ def solution(num, total):
                 answer.append(i+j)
             if sum(answer) == total:
                 return answer
-            
+         
 print(solution(3, 12))
 print(solution(5, 15))
 print(solution(4, 14))

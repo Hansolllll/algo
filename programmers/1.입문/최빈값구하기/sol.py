@@ -18,6 +18,24 @@ def solution(array):
     else:
         return numbers.index(max(numbers))
 
+# 딕셔너리 이용
+def solution(array):
+    a = []
+    for i in array:
+        a.append(array.count(i))    #1    1    3    3    3    1
+
+
+    di = {key: value for key, value in zip(array, a)}   # 1:1, 2:1, 3:3, 4:1
+
+
+    max_count = max(di.values())       # 3
+
+    if list(di.values()).count(max_count) > 1:  #value 가 3ㅇ인 값을 count// 여러개면 -1 return
+        return -1
+
+    answer = [key for key, value in di.items() if value == max_count][0]
+    
+    return answer
 
 print(solution([1,2,3,3,3,4]))
 print(solution([1,1,2,2]))
