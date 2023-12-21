@@ -1,10 +1,8 @@
 def solution(s):
-    if len(s) = 4 or len(s) = 6:
-        for char in s:
-            if char.isdigit()==False:
-                return False
+    if len(s) in [4,6] and s.isdigit():
         return True
-    return False
+    else:
+        return False
 
 print(solution('a234'))
 print(solution('1234'))
