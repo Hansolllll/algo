@@ -7,3 +7,4 @@ def solution(price, money, count):
 
 
 print(solution(3, 20, 4))
+
