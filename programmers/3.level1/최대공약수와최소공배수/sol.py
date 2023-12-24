@@ -9,5 +9,8 @@ def solution(n, m):
             m_num.append(_)
     num = set(n_num) & set(m_num)
     
-    return [max(n_num), n*m/max(n_num)]
+    return [max(num), n*m/max(num)]
+
+print(solution(3, 12))
+print(solution(2,5))
             
