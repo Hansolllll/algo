@@ -1,43 +1,62 @@
 def solution(board):
     answer = 0
     bomb = []
-    for i in range(len(board)):
-        for k in range(len(board)):
-            
-            if board[i][k] == 1:
-                bomb.append((i,k))
-    
-    for _ in bomb:
-        i = _[0]
-        k = _[-1]
+    # 길이가 1일 때
+    if board == [[0]]:
+        return 1
+    elif board == [[1]]:
+        return 0
+
+    else:
+        # 지뢰 위치 찾아서 bomb 안에 넣기
+        for i in range(len(board)):
+            for k in range(len(board)):
         
-        if _[0] == 0:
-            limit_x = range(2)
-        elif _[0] == len(board)-1:
-            limit_x = range(-1, 1)
-        else:
-            limit_x = range(-1,2)
-        
-        if _[-1] == 0:
-            limit_y = range(2)
-        elif _[-1] == len(board)-1:
-            limit_y = range(-1, 1)
-        else:
-            limit_y = range(-1,2)
+                if board[i][k] == 1:
+                    bomb.append((i,k))
+
+        # i는 지뢰 x좌표, k는 지뢰 y좌표일 때 지뢰 위치에 따라 범위 정해주기
+        for _ in bomb:
+            i = _[0]
+            k = _[-1]
             
-        for x in limit_x:
-            for y in limit_y:
-                board[i+x][k+y] = 3
-                
-    for i in range(len(board)):
-        for k in range(len(board)):
-            if board[i][k] == 0:
-                answer += 1
-    return answer
+            # 지뢰가 첫번째 행에 있을 겅우
+            if _[0] == 0:
+                limit_x = range(2)
+            # 지뢰가 마지막 행에 있을 경우     
+            elif _[0] == len(board)-1:
+                limit_x = range(-1, 1)
+            # 지뢰가 사이 행에 있을 경우
+            else:
+                limit_x = range(-1,2)
+            
+            # 지뢰가 첫번째 열에 있을 경우
+            if _[-1] == 0:
+                limit_y = range(2)
+            # 지뢰가 첫번째 열에 있을 경우
+            elif _[-1] == len(board)-1:
+                limit_y = range(-1, 1)
+            # 지뢰가 그 사이 열에 있을 경우
+            else:
+                limit_y = range(-1,2)
+            
+            # 위에서 정해진 x y축 범위 안의 값들을 3으로 바꾸기(위험 지역)
+            for x in limit_x:
+                for y in limit_y:
+                    board[i+x][k+y] = 3
+
+        # 3으로 바뀌지 않은 지대만 안전지대로 카운트 
+        for i in range(len(board)):
+            for k in range(len(board)):
+                if board[i][k] == 0:
+                    answer += 1
+        return answer
     
 print(solution([[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 1, 0, 0], [0, 0, 0, 0, 0]]))
 print(solution([[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 1, 1, 0], [0, 0, 0, 0, 0]]))
 print(solution([[1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1]]))
+print(solution([[0]]))
+print(solution([[1]]))
 
 # def solution(board):
 #     answer = 0
