@@ -40,5 +40,13 @@ def solution(my_string):
 
     return answer
 
+def solution(my_string):
+    nums = '0123456789'
+    total = 0
+    for char in my_string:
+        if char in nums:
+            total += int(char)
+    return total
+    
 print(solution("aAb1B2cC34oOp"))
 print(solution("1a2b3c4d123"))

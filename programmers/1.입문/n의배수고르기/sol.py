@@ -6,6 +6,8 @@ def solution(n, numlist):
 
     return answer
 
+def solution(n,numlist):
+    return [num for num in numlist if num % n == 0]
 
 # 아래는 pop을 이용해서 해결해보려고했는데 pop하는 동작때문에 인덱스가 일정하지 않아서 에러뜸
 # def solution(n, numlist):

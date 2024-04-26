@@ -37,5 +37,9 @@ def solution(rsp):
 
     return answer
 
+def solution(rsp):
+    rsp_dict = {'2':'0', '0':'5', '5':'2'}
+    return ''.join([rsp_dict[num] for num in rsp])
+    
 print(solution('2'))
 print(solution('205'))

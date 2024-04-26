@@ -12,6 +12,11 @@ def solution(my_string, num1, num2):
     my_list[num2] = temp[0]
     return ''.join(my_list)
 
+def solution(my_string, num1, num2):
+    my_list = [my_string[i] for i in range(len(my_string)) if i not in [num1, num2]]
+    my_list.insert(num1, my_string[num2])
+    my_list.insert(num2, my_string[num1])
+    return ''.join(my_list)
 
     # replace 메소드 이용해 해결해보려 했으나, 중간 인덱스의 값은 바꿀 수 없음
     # for char in my_string:

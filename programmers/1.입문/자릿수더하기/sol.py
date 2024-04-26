@@ -6,5 +6,8 @@ def solution(n):
 
     return answer
 
+def solution(n):
+    return sum([int(char) for char in str(n)])
+
 print(solution(1234))
 print(solution(930211))
